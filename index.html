@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAApCAYAAACoYAD2AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKKSURBVHgB7ZlPaNNQHMe/r42rMIUKguIYlKpQL1v1NKaHlPkHC0Lnabd1N0UEd1C8uZ68qN1AmLcWb16mO0gVhGX4B8FLutMENwOiMJgsqBu06/J8780U26Vpt2ZtBvlASPNe3uOT358SCIEFfS/jSULoMCiR0Ro0AihG0Uh9HHylVU+S6oH+XPweNTCG9qDRohGrFq2QbLOgyRbRsqRLBE0qRIWkywRNyqLEpYICFkG1o7gWI4EnFyhcjOTDiFQoudoRBcOAD3sAT9IpPEmn8CSdwpN0irqSoYNHMJN4IM5Okj53HZmB2w3d60c8PFZrUggOPkT08HEkwmeRX/4C7fcSmiEY6ETuyn0MnYyJfTmzP+ZqL6B0uqakKWhGMBg4gGTkkjh/XvkGvbiK7ZII97OsPELkUHd5TO7qtRe1k5y5yjYLdm8Z7zt6SkSVLcbS2kpDslyEp/bumSHslzos5/M/FzDPHt5KkuDxecvXIJ4KXos8cnYo3/OY/voBKi+FX5ulwNfw9b3s2Ix+p+0eE3NTuPV20nrSMEZqSnKqU74bjL6bxHh+qvYNTNK2u3mTnH52jT3pcziNurwg9rYV/IdtJP+HRzMzcIfVTw+aQS+sIvXpaUNygnrptoIXeTJyEcPs2A5m7WbnXwvRhtmJpAlvBrkrCvlYD2uQE6JRzAbhEnrxjxDLs7S+WHy/8//XZiRbRr3GcQuepFN4kk6xVySJBjdDiO4DNWbhZkobKo9kFq6FZjGqaD7cfKOAIgXXQTWsbwgvv7jOLSq4HCbsnUiGKxCCMR5FflX59SEth7BPyrBfMtoBpTpTmkCpNM4EdXOYWN6cloOQpCj7jhNCq/Cvq7ihqFZTfwGzAxeXmAcTBgAAAABJRU5ErkJggg==" />
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATISURBVHgB7dxLqBRUHMfxY1RCPhASMtpoRkTgo6CCLFCiFm5SN256GAQhFBUVIS28LiLoQUoFlT2NIl3kNahIKgtMIiuVqER8glGCgZgS5cLmDBiK17lz576GX58PDDN37nC5i++c+c9wzow52VAgxHkFggiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJoqgiSJoogiaKIImiqCJImiiCJoo5xfaduzEsbLuwIfl/X0bmreH07UXzyhPzHi4XHrRJYX2jTnZUGjLks0PlF1H95aRMv6CceXFG54qV06cXmiPkaNNb+x+b0Rjro6dOF6Wff/ksL8aJBF0G9Yd2FBe2/VuGQ2//XWorPpldaE9gu5HDWrlT6+W0fTRwc/K2v29hf4JuoUa8/3fLCvdYNXPqxsjz55Ca94UtnDv5sfLtj9+LN1iSuMTj7VzX2i8WRxf6JuP7Vp4fccPpbscLN9dvafMvWxWoW9GDqIImiiCJoqgiSJoogiaKIImiqCJImiiCJoogiaKoAfhwZmLyvLr7ixD4e6rbivbFr9cJo218WgwbE7q0PM3LS0PzVr0388rtr5TOlWfGCtvXtq8vWnBs2Ve76PlyN9OqXTCCt2BN2957IyYe66/q3nf1AkDO9A6aey45hPjVMzV7MnTrdSDIOgOfPXrjrPuW9IYGTYtfK553Y66BXTb4lfOeGKc8vbOT63QHTJydOCtnRub13VVPl1doet9yxsr9peN6GuY2w/vacR5vLkaT50wpdw+7cZmzOfa07xi65rS823n48v/nRMrLYx56daWv6/jwfr5KwY8avSlRn/PF0+X3r1bWj6uztg2+J+bkWMQ6uo7b/0jjZV4YxmMuppfs/a+fmOmf4IepP1/HipLPn+mTFtzx4CDrCHXTzTqpf4dBs8MPURqkAs/Wd4cPxZcPqcxK89pjAYz+3zchr1fl959W5pBM7QEPcRqsCt3fNC8VKfP11bh4SfoYSbikWWGJoqgiSJoogiaKIImiqCJImiiCJoogm6hbvnsNjb+tyboFmZPvqJ0kxpz3bLKuQm6hboZv5ss6LL/pxsJuoV6nGooNu8PlaE6YZ5M0C3Ul/j183u6YpauMU+dOKXQmiNYbdh+eHdZ+HHPqOycm3ThuOYZxb4O03I2Qbdp/9Hfm4dj63GrkQi7hly/fKaGbGVun6A7UL9i4Mg/w/s1A/WEOAMnaKJ4U0gUQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE+VfmAUNU2YZ7JcAAAAASUVORK5CYII=" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta
+      name="keywords"
+      content="ecommerce website, business website, online business, business tool"
+    />
+    <meta name="og:type" content="website" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="og:url" content="https://getbumpa.com" />
+    <meta name="og:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@getBumpa" />
+    <meta name="twitter:site" content="https://getbumpa.com" />
+    <meta
+      name="keywords"
+      content="ecommerce website, business website, online business, business tool"
+    />
+    <meta
+      name="og:title"
+      content="Bumpa: Business Tools | Website| Inventory | Analytics"
+    />
+    <meta
+      name="twitter:title"
+      content="Bumpa: Business Tools | Website| Inventory | Analytics"
+    />
+    <meta
+      name="description"
+      content="Get everything to manage and grow your business in one app | Create an eCommerce website for your small business in seconds with Bumpa "
+    />
+    <meta
+      name="og:description"
+      content="Get everything to manage and grow your business in one app | Create an eCommerce website for your small business in seconds with Bumpa "
+    />
+    <meta
+      name="twitter:description"
+      content="Get everything to manage and grow your business in one app | Create an eCommerce website for your small business in seconds with Bumpa "
+    />
+    <meta
+      name="og:image"
+      content="https://ik.imagekit.io/uknntomzctt/Bumpa-Thumbnail-dsgn-1200x600_4Wd8Iu8Fc.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1674664326699"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ik.imagekit.io/uknntomzctt/Bumpa-Thumbnail-dsgn-1200x600_4Wd8Iu8Fc.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1674664326699"
+    />
+    <meta name="p:domain_verify" content="d9e3916cc75eb0ea45e1fe510a03e751" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Polyfill for Amplify -->
+    <script>
+      var global = global || window;
+      var process = process || {
+        env: {
+          DEBUG: undefined,
+        },
+        version: [],
+      };
+    </script>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Bumpa: Business Tools | Website| Inventory | Analytics</title>
+
+    <!-- Mixpanel -->
+    <script type="text/javascript">
+      (function (f, b) {
+        if (!b.__SV) {
+          var e, g, i, h;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function (e, f, c) {
+            function g(a, d) {
+              var b = d.split('.');
+              2 == b.length && ((a = a[b[0]]), (d = b[1]));
+              a[d] = function () {
+                a.push([d].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var a = b;
+            'undefined' !== typeof c ? (a = b[c] = []) : (c = 'mixpanel');
+            a.people = a.people || [];
+            a.toString = function (a) {
+              var d = 'mixpanel';
+              'mixpanel' !== c && (d += '.' + c);
+              a || (d += ' (stub)');
+              return d;
+            };
+            a.people.toString = function () {
+              return a.toString(1) + '.people (stub)';
+            };
+            i =
+              'disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove'.split(
+                ' ',
+              );
+            for (h = 0; h < i.length; h++) g(a, i[h]);
+            var j = 'set set_once union unset remove delete'.split(' ');
+            a.get_group = function () {
+              function b(c) {
+                d[c] = function () {
+                  call2_args = arguments;
+                  call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                  a.push([e, call2]);
+                };
+              }
+              for (
+                var d = {},
+                  e = ['get_group'].concat(
+                    Array.prototype.slice.call(arguments, 0),
+                  ),
+                  c = 0;
+                c < j.length;
+                c++
+              )
+                b(j[c]);
+              return d;
+            };
+            b._i.push([e, f, c]);
+          };
+          b.__SV = 1.2;
+          e = f.createElement('script');
+          e.type = 'text/javascript';
+          e.async = !0;
+          e.src =
+            'undefined' !== typeof MIXPANEL_CUSTOM_LIB_URL
+              ? MIXPANEL_CUSTOM_LIB_URL
+              : 'file:' === f.location.protocol &&
+                  '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js'.match(/^\/\//)
+                ? 'https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js'
+                : '//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';
+          g = f.getElementsByTagName('script')[0];
+          g.parentNode.insertBefore(e, g);
+        }
+      })(document, window.mixpanel || []);
+
+      const isDevelopment =
+        location.hostname === 'localhost' ||
+        location.hostname === '127.0.0.1' ||
+        location.hostname.includes('dev');
+
+      if (!isDevelopment) {
+        const originalWarn = console.warn;
+        console.warn = (...args) => {
+          const message = args.join(' ');
+
+          if (message.includes('Mixpanel warning')) {
+            return;
+          }
+
+          originalWarn.apply(console, args);
+        };
+      }
+
+      mixpanel.init('49eb59a1be411d0fc79a4a485ed7e1f1', {
+        debug: isDevelopment,
+        verbose: isDevelopment,
+        track_pageview: true,
+        persistence: 'localStorage',
+        record_sessions_percent: isDevelopment ? 100 : 10,
+        record_idle_sessions: false,
+      });
+    </script>
+
+    <!-- Pinterest Tag -->
+    <script>
+      !(function (e) {
+        if (!window.pintrk) {
+          window.pintrk = function () {
+            window.pintrk.queue.push(Array.prototype.slice.call(arguments));
+          };
+          var n = window.pintrk;
+          ((n.queue = []), (n.version = '3.0'));
+          var t = document.createElement('script');
+          ((t.async = !0), (t.src = e));
+          var r = document.getElementsByTagName('script')[0];
+          r.parentNode.insertBefore(t, r);
+        }
+      })('https://s.pinimg.com/ct/core.js');
+      pintrk('load', '2612826542699', { em: '<user_email_address>' });
+      pintrk('page');
+    </script>
+    <!-- end Pinterest Tag -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P8ZQVJ4');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script type="module" crossorigin src="/assets/index-80bc7f49.js"></script>
+    <link rel="stylesheet" href="/assets/index-dbc2c9b7.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="root"></div>
+    
+
+    <!-- Customer.io -->
+    <script type="text/javascript">
+      var _cio = _cio || [];
+      (function () {
+        var a, b, c;
+        a = function (f) {
+          return function () {
+            _cio.push([f].concat(Array.prototype.slice.call(arguments, 0)));
+          };
+        };
+        b = ['load', 'identify', 'sidentify', 'track', 'page'];
+        for (c = 0; c < b.length; c++) {
+          _cio[b[c]] = a(b[c]);
+        }
+        var t = document.createElement('script'),
+          s = document.getElementsByTagName('script')[0];
+        t.async = true;
+        t.id = 'cio-tracker';
+        t.setAttribute('data-site-id', '2a900d23dfda8b136cf5');
+        t.src = 'https://assets.customer.io/assets/track-eu.js';
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
+    <!-- Freshworks Widget -->
+
+    <script>
+      function initFreshChat() {
+        window.fcWidget.init({
+          token: '6b784c24-96a2-4af6-95b4-7c2f7534b186',
+          host: 'https://getbumpa.freshchat.com',
+          widgetUuid: 'f44436e5-26c8-4425-94c2-76d9e5eadee1',
+        });
+      }
+
+      function initialize(i, t) {
+        if (i.getElementById(t)) {
+          initFreshChat();
+        } else {
+          var e = i.createElement('script');
+          e.id = t;
+          e.async = true;
+          e.src = 'https://getbumpa.freshchat.com/js/widget.js';
+          e.onload = initFreshChat;
+          i.head.appendChild(e);
+        }
+      }
+
+      function initiateCall() {
+        initialize(document, 'Freshchat-js-sdk');
+      }
+
+      if (window.addEventListener) {
+        window.addEventListener('load', initiateCall, false);
+      } else if (window.attachEvent) {
+        window.attachEvent('load', initiateCall);
+      }
+    </script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P8ZQVJ4"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  </body>
+</html>
